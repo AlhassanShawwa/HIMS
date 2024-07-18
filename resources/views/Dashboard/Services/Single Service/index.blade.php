@@ -1,6 +1,6 @@
 @extends('Dashboard.layouts.master')
 @section('title')
-    {{trans('main-sidebar_trans.Single_service')}}
+    {{__('main-sidebar_trans.Single_service')}}
 @stop
 @section('css')
     <!--Internal   Notify -->
@@ -11,8 +11,8 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{trans('main-sidebar_trans.Services')}}</h4><span
-                    class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('main-sidebar_trans.Single_service')}}</span>
+                <h4 class="content-title mb-0 my-auto">{{__('main-sidebar_trans.Services')}}</h4><span
+                    class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{__('main-sidebar_trans.Single_service')}}</span>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
                 <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add">
-                            {{trans('Services.add_Service')}}
+                            {{__('Services.add_Service')}}
                         </button>
                     </div>
                 </div>
@@ -38,12 +38,12 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th> {{trans('Services.name')}}</th>
-                                <th> {{trans('Services.price')}}</th>
-                                <th> {{trans('doctors.Status')}}</th>
-                                <th> {{trans('Services.description')}}</th>
-                                <th>{{trans('sections_trans.created_at')}}</th>
-                                <th>{{trans('sections_trans.Processes')}}</th>
+                                <th> {{__('Services.name')}}</th>
+                                <th> {{__('Services.price')}}</th>
+                                <th> {{__('doctors.Status')}}</th>
+                                <th> {{__('Services.description')}}</th>
+                                <th>{{__('sections_trans.created_at')}}</th>
+                                <th>{{__('sections_trans.Processes')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -55,7 +55,7 @@
                                     <td>
                                         <div
                                             class="dot-label bg-{{$service->status == 1 ? 'success':'danger'}} ml-1"></div>
-                                        {{$service->status == 1 ? trans('doctors.Enabled'):trans('doctors.Not_enabled')}}
+                                        {{$service->status == 1 ? __('doctors.Enabled'):__('doctors.Not_enabled')}}
                                     </td>
                                     <td> {{ Str::limit($service->description, 50) }}</td>
                                     <td>{{ $service->created_at->diffForHumans() }}</td>

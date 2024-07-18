@@ -1,6 +1,6 @@
 @extends('Dashboard.layouts.master')
 @section('title')
-    {{trans('main-sidebar_trans.doctors')}}
+    {{__('main-sidebar_trans.doctors')}}
 @stop
 @section('css')
     <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
@@ -12,9 +12,9 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{trans('main-sidebar_trans.doctors')}}</h4>
+                <h4 class="content-title mb-0 my-auto">{{__('main-sidebar_trans.doctors')}}</h4>
                 <span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                    {{trans('main-sidebar_trans.view_all')}}</span>
+                    {{__('main-sidebar_trans.view_all')}}</span>
             </div>
         </div>
     </div>
@@ -30,9 +30,9 @@
                 <div class="card-header pb-0">
 
                     <a href="{{route('Doctors.create')}}" class="btn btn-primary" role="button"
-                       aria-pressed="true">{{trans('doctors.add_doctor')}}</a>
+                       aria-pressed="true">{{__('doctors.add_doctor')}}</a>
                     <button type="button" class="btn btn-danger"
-                            id="btn_delete_all">{{trans('doctors.delete_select')}}</button>
+                            id="btn_delete_all">{{__('doctors.delete_select')}}</button>
 
                 </div>
                 <div class="card-body">
@@ -42,15 +42,15 @@
                             <tr>
                                 <th>#</th>
                                 <th><input name="select_all"  id="example-select-all"  type="checkbox"/></th>
-                                <th>{{trans('doctors.name')}}</th>
-                                <th>{{trans('doctors.img')}}</th>
-                                <th>{{trans('doctors.email')}}</th>
-                                <th>{{trans('doctors.section')}}</th>
-                                <th>{{trans('doctors.phone')}}</th>
-                                <th>{{trans('doctors.appointments')}}</th>
-                                <th>{{trans('doctors.Status')}}</th>
-                                <th>{{trans('doctors.created_at')}}</th>
-                                <th>{{trans('doctors.Processes')}}</th>
+                                <th>{{__('doctors.name')}}</th>
+                                <th>{{__('doctors.img')}}</th>
+                                <th>{{__('doctors.email')}}</th>
+                                <th>{{__('doctors.section')}}</th>
+                                <th>{{__('doctors.phone')}}</th>
+                                <th>{{__('doctors.appointments')}}</th>
+                                <th>{{__('doctors.Status')}}</th>
+                                <th>{{__('doctors.created_at')}}</th>
+                                <th>{{__('doctors.Processes')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -82,14 +82,14 @@
                                     <td>
                                         <div
                                             class="dot-label bg-{{$doctor->status == 1 ? 'success':'danger'}} ml-1"></div>
-                                        {{$doctor->status == 1 ? trans('doctors.Enabled'):trans('doctors.Not_enabled')}}
+                                        {{$doctor->status == 1 ? __('doctors.Enabled'):__('doctors.Not_enabled')}}
                                     </td>
 
                                     <td>{{ $doctor->created_at->diffForHumans() }}</td>
                                     <td>
 
                                         <div class="dropdown">
-                                            <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-outline-primary btn-sm" data-toggle="dropdown" type="button">{{trans('doctors.Processes')}}<i class="fas fa-caret-down mr-1"></i></button>
+                                            <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-outline-primary btn-sm" data-toggle="dropdown" type="button">{{__('doctors.Processes')}}<i class="fas fa-caret-down mr-1"></i></button>
                                             <div class="dropdown-menu tx-13">
                                                 <a class="dropdown-item" href="{{route('Doctors.edit',$doctor->id)}}"><i style="color: #0ba360" class="text-success ti-user"></i>&nbsp;&nbsp;تعديل البيانات</a>
                                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#update_password{{$doctor->id}}"><i   class="text-primary ti-key"></i>&nbsp;&nbsp;تغير كلمة المرور</a>

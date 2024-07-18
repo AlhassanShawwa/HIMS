@@ -4,14 +4,14 @@
 <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
 @endsection
 @section('title')
-    {{trans('main-sidebar_trans.Insurance')}}
+    {{__('main-sidebar_trans.Insurance')}}
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{trans('main-sidebar_trans.Services')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('main-sidebar_trans.Insurance')}}</span>
+                <h4 class="content-title mb-0 my-auto">{{__('main-sidebar_trans.Services')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{__('main-sidebar_trans.Insurance')}}</span>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{route('insurance.create')}}" class="btn btn-primary">{{trans('insurance.Add_Insurance')}}</a>
+                    <a href="{{route('insurance.create')}}" class="btn btn-primary">{{__('insurance.Add_Insurance')}}</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -34,13 +34,13 @@
                             <thead>
                             <tr class="table-secondary">
                                 <th>#</th>
-                                <th >{{trans('insurance.Company_code')}}</th>
-                                <th >{{trans('insurance.Company_name')}}</th>
-                                <th >{{trans('insurance.discount_percentage')}}</th>
-                                <th >{{trans('insurance.Insurance_bearing_percentage')}}</th>
-                                <th >{{trans('insurance.status')}}</th>
-                                <th >{{trans('insurance.notes')}}</th>
-                                <th >{{trans('insurance.Processes')}}</th>
+                                <th >{{__('insurance.Company_code')}}</th>
+                                <th >{{__('insurance.Company_name')}}</th>
+                                <th >{{__('insurance.discount_percentage')}}</th>
+                                <th >{{__('insurance.Insurance_bearing_percentage')}}</th>
+                                <th >{{__('insurance.status')}}</th>
+                                <th >{{__('insurance.notes')}}</th>
+                                <th >{{__('insurance.Processes')}}</th>
                             </tr>
                             </thead>
                             <tbody>

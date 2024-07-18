@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{trans('insurance.Title_deleted')}}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{__('insurance.Title_deleted')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -18,13 +18,13 @@
 
                     <div class="row">
                         <div class="col">
-                            <p class="h5 text-danger">{{trans('insurance.Deleted')}}</p>
+                            <p class="h5 text-danger">{{__('insurance.Deleted')}}</p>
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('insurance.close')}}</button>
-                        <button class="btn btn-success">{{trans('insurance.save')}}</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('insurance.close')}}</button>
+                        <button class="btn btn-success">{{__('insurance.save')}}</button>
                     </div>
                 </form>
             </div>

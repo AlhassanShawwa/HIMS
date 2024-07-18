@@ -3,7 +3,7 @@
 return array (
   'Ambulance_calls' => 'مكالمات الاسعاف',
   'Insurance' => 'شركات التامين',
-  'Main' => 'برنامج ادارة المستشفيات',
+  'Main' => 'برنامج ادارة معلومات المستشفيات',
   'Services' => 'الخدمات',
   'Single_service' => 'خدمة مفردة',
   'ambulance' => 'الاسعاف',

@@ -3,7 +3,7 @@
 return array (
    'Ambulance_calls' => 'Ambulance calls',
   'Insurance' => 'Insurance',
-  'Main' => 'Hospital management software',
+  'Main' => 'Hospital Information Management System',
   'Services' => 'Services',
   'Single_service' => 'Single service',
   'ambulance' => 'Ambulance',

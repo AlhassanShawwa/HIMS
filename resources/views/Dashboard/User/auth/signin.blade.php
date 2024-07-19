@@ -54,7 +54,7 @@
 
                                             {{--form user--}}
                                             <div class="panel" id="user">
-                                                <h2>الدخول كمريض</h2>
+                                                <h2>{{__('Dashboard/login_trans.user')}}</h2>
                                                 <form method="POST" action="{{ route('login.user') }}">
                                                     @csrf
                                                     <div class="form-group">
@@ -80,7 +80,7 @@
 
                                             {{--form admin--}}
                                             <div class="panel" id="admin">
-                                                <h2>الدخول ادمن</h2>
+                                                <h2>{{__('Dashboard/login_trans.admin')}}</h2>
                                                 <form method="POST" action="{{ route('login.admin') }}">
                                                     @csrf
                                                     <div class="form-group">

@@ -3,14 +3,15 @@
 namespace App\Http\Livewire;
 
 use App\Models\Doctor;
-use App\Models\FundAccount;
 use App\Models\Patient;
-use App\Models\PatientAccount;
 use App\Models\Service;
-use App\Models\single_invoice;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use App\Models\FundAccount;
+use App\Models\PatientAccount;
+use App\Models\single_invoice;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Redirect;
 
 class SingleInvoices extends Component
 {
@@ -34,6 +35,23 @@ class SingleInvoices extends Component
 
     public function show_form_add(){
         $this->show_table = false;
+    }
+
+    public function print($id)
+    {
+        $single_invoice = single_invoice::findorfail($id);
+        return Redirect::route('Print_single_invoices',[
+            'invoice_date' => $single_invoice->invoice_date,
+            'doctor_id' => $single_invoice->Doctor->name,
+            'section_id' => $single_invoice->Section->name,
+            'Service_id' => $single_invoice->Service->name,
+            'type' => $single_invoice->type,
+            'price' => $single_invoice->price,
+            'discount_value' => $single_invoice->discount_value,
+            'tax_rate' => $single_invoice->tax_rate,
+            'total_with_tax' => $single_invoice->total_with_tax,
+        ]);
+
     }
 
     public function get_section()

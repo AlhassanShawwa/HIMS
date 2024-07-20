@@ -37,7 +37,7 @@ class ReceiptRepository implements ReceiptRepositoryInterface
             $receipt_accounts = new ReceiptAccount();
             $receipt_accounts->date =date('y-m-d');
             $receipt_accounts->patient_id = $request->patient_id;
-            $receipt_accounts->Debit = $request->Debit;
+            $receipt_accounts->amount = $request->Debit;
             $receipt_accounts->description = $request->description;
             $receipt_accounts->save();
             // store fund_accounts
@@ -76,6 +76,12 @@ class ReceiptRepository implements ReceiptRepositoryInterface
         return view('Dashboard.Receipt.edit',compact('receipt_accounts','Patients'));
     }
 
+    public function show($id)
+    {
+        $receipt = ReceiptAccount::findorfail($id);
+        return view('Dashboard.Receipt.print',compact('receipt'));
+    }
+
     public function update($request)
     {
         DB::beginTransaction();
@@ -85,7 +91,7 @@ class ReceiptRepository implements ReceiptRepositoryInterface
             $receipt_accounts = ReceiptAccount::findorfail($request->id);
             $receipt_accounts->date =date('y-m-d');
             $receipt_accounts->patient_id = $request->patient_id;
-            $receipt_accounts->Debit = $request->Debit;
+            $receipt_accounts->amount = $request->Debit;
             $receipt_accounts->description = $request->description;
             $receipt_accounts->save();
             // store fund_accounts

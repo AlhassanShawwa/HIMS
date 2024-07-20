@@ -8,7 +8,7 @@ use App\Interfaces\Finance\PaymentRepositoryInterface;
 
 class PaymentAccountController extends Controller
 {
- 
+
     private $Payment;
 
     public function __construct(PaymentRepositoryInterface $Payment)
@@ -20,6 +20,10 @@ class PaymentAccountController extends Controller
         return $this->Payment->index();
     }
 
+    public function show($id)
+    {
+        return $this->Payment->show($id);
+    }
 
     public function create()
     {
@@ -30,12 +34,6 @@ class PaymentAccountController extends Controller
     public function store(Request $request)
     {
         return $this->Payment->store($request);
-    }
-
-
-    public function show($id)
-    {
-        //
     }
 
 

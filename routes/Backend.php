@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\AmbulanceController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\InsuranceController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
+use App\Http\Controllers\Dashboard\PaymentAccountController;
 use App\Http\Controllers\Dashboard\ReceiptAccountController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -115,7 +116,11 @@ Route::group(
 
         //############################# end Receipt route ######################################
 
+        //############################# Payment route ##########################################
 
+        Route::resource('Payment', PaymentAccountController::class);
+
+        //############################# end Payment route ######################################
 
     });
 
